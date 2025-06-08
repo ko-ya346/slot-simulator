@@ -1,5 +1,5 @@
 export type SettingLevel = 1 | 2 | 3 | 4 | 5 | 6;
-export type JuggleMachine = {
+export type JugglerMachine = {
   name: string;
   p_BB: Record<SettingLevel, number>;
   p_RB: Record<SettingLevel, number>;
