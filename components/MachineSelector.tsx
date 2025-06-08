@@ -15,7 +15,7 @@ export default function MachineSelector() {
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
     >
-      {mashineNames.map((name) => (
+      {machineNames.map((name) => (
         <option key={name} value={name}>
           {name}
         </option>
