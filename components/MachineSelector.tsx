@@ -57,11 +57,11 @@ export default function MachineSelector() {
           </tr>
         </thead>
         <tbody>
-          {(Object.keys(machine.payout) as SettingLevel[]).map((setting) => (
+          {Object.entries(machine.payout).map(([setting, payout]) => (
             <tr key={setting}>
               <td className="p-2 border text-center">{setting}</td>
               <td className="p-2 border text-center">
-                {machine.payout[setting].toFixed(1)}%
+                {payout.toFixed(1)}%
               </td>
             </tr>
           ))}
@@ -102,9 +102,9 @@ export default function MachineSelector() {
       <div className="mt-6">
         <h2 className="font-bold text-lg mb-2">📊 設定ごとの事後確率</h2>
         <ul className="text-sm">
-          {(Object.keys(posterior) as SettingLevel[]).map((k) => (
-            <li key={k}>
-              設定{k}: {(posterior[k] * 100).toFixed(2)}%
+          {Object.entries(posterior).map(([setting, prob]) => (
+            <li key={setting}>
+              設定{setting}: {(prob * 100).toFixed(2)}%
             </li>
           ))}
         </ul>
