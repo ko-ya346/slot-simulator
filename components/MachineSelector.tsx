@@ -25,9 +25,9 @@ export default function MachineSelector() {
   const gamesPerHour = 800;
   const coinsPerGame = 3;
   const hourlyProfit = ((expectedPayout / 100) - 1) * gamesPerHour * coinsPerGame;
-  const chartData = (Object.keys(posterior) as SettingLevel[]).map((k) => ({
-    setting: String(k),
-    probability: Number((posterior[k] * 100).toFixed(2)),
+  const chartData = Object.entries(posterior).map(([k, v]) => ({
+    setting: k,
+    probability: Number((v * 100).toFixed(2)),
   }));
   console.log("posterior", posterior);
   console.log("chartData", chartData);
