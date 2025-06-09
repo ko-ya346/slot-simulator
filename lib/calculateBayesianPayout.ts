@@ -39,10 +39,10 @@ export function calculateBayesianPayout(
     posterior[k] /= total;
   }
 
-  const expectedPayout = (Object.keys(posterior) as SettingLevel[]).reduce(
-    (acc, k) => acc + posterior[k] * machine.payout[k],
-    0
-  );
+  const expectedPayout = Object.entries(posterior).reduce((acc, [key, prob]) => {
+    const k = Number(key) as SettingLevel;
+    return acc + prob * machine.payout[k];
+  }, 0);
 
   return { posterior, expectedPayout };
 }
