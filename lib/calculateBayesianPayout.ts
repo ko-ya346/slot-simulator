@@ -10,7 +10,14 @@ export function calculateBayesianPayout(
   posterior: Record<SettingLevel, number>;
   expectedPayout: number;
 } {
-  const posterior: Record<SettingLevel, number> = {} as any;
+  const posterior: Record<SettingLevel, number> = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+  };
   let total = 0;
 
   for (const k of [1, 2, 3, 4, 5, 6] as SettingLevel[]) {
