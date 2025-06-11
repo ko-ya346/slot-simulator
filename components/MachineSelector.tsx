@@ -59,7 +59,7 @@ export default function MachineSelector() {
         </thead>
         <tbody>
           {Object.keys(machine.payout).map((settingKey) => {
-            const setting = Number(settingKey);
+            const setting = Number(settingKey) as SettingLevel;
             return (
               <tr key={setting}>
                 <td className="p-2 border text-center">{setting}</td>
