@@ -53,16 +53,26 @@ export default function MachineSelector() {
           <tr className="bg-gray-200">
             <th className="p-2 border">設定</th>
             <th className="p-2 border">機械割(%)</th>
+            <th className="p-2 border">BB確率</th>
+            <th className="p-2 border">RB確率</th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(machine.payout).map(([setting, payout]) => (
-            <tr key={setting}>
-              <td className="p-2 border text-center">{setting}</td>
-              <td className="p-2 border text-center">
-                {payout.toFixed(1)}%
-              </td>
-            </tr>
+          {Object.keys(machine.payout).map((settingKey) => (
+            const setting = Number(settingKey);
+            return (
+              <tr key={setting}>
+                <td className="p-2 border text-center">{setting}</td>
+                <td className="p-2 border text-center">
+                  {machine.payout[setting].toFixed(1)}%
+                </td>
+                <td className="p-2 border text-center">
+                  {machine.p_BB[setting].toFixed(4)}%
+                </td>
+                <td className="p-2 border text-center">
+                  {machine.p_RB[setting].toFixed(4)}%
+                </td>
+             </tr>
           ))}
         </tbody>
       </table>
