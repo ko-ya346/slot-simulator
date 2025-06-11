@@ -67,10 +67,10 @@ export default function MachineSelector() {
                   {machine.payout[setting].toFixed(1)}%
                 </td>
                 <td className="p-2 border text-center">
-                  1/{Math.round(1 / machine.p_BB[setting]}
+                  1/{Math.round(1 / machine.p_BB[setting])}
                 </td>
                 <td className="p-2 border text-center">
-                  1/{Math.round(1 / machine.p_RB[setting]}
+                  1/{Math.round(1 / machine.p_RB[setting])}
                 </td>
              </tr>
             );
