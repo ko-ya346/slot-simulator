@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { jugglerMachines } from "@/data/jugglerMachines";
+import { jugglerMachines, SettingLevel } from "@/data/jugglerMachines";
 import { calculateBayesianPayout } from "@/lib/calculateBayesianPayout";
 import {
   BarChart,
