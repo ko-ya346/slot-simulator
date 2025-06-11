@@ -58,7 +58,7 @@ export default function MachineSelector() {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(machine.payout).map((settingKey) => (
+          {Object.keys(machine.payout).map((settingKey) => {
             const setting = Number(settingKey);
             return (
               <tr key={setting}>
@@ -73,7 +73,8 @@ export default function MachineSelector() {
                   {machine.p_RB[setting].toFixed(4)}%
                 </td>
              </tr>
-          ))}
+            );
+          })}
         </tbody>
       </table>
       <div className="mt-6">
