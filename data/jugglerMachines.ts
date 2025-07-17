@@ -1,9 +1,12 @@
-export type SettingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+export const SETTING_LEVELS = [1, 2, 3, 4, 5, 6] as const;
+export type SettingLevel = typeof SETTING_LEVELS[number];
+
 export type JugglerMachine = {
   name: string;
   p_BB: Record<SettingLevel, number>;
   p_RB: Record<SettingLevel, number>;
   payout: Record<SettingLevel, number>;
+  // 事前確率: 各設定が選ばれる確率の初期値
   prior: Record<SettingLevel, number>;
 };
 
