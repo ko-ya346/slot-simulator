@@ -1,1 +1,8 @@
+# Dependencies
+/node_modules
+
+# Build directory
+/.next/
+
+# Temporary files
 GEMINI.md
